@@ -30,18 +30,19 @@ public class Point implements Comparable<Point> {
     // slope between this point and that point
     public double slopeTo(Point that) {
         /*(y1 − y0)/(x1 − x0)*/
-        if (this.x == that.x) return this.y == that.y ? Double.NEGATIVE_INFINITY:Double.POSITIVE_INFINITY;
+        if (this.x == that.x) 
+            return this.y == that.y ? Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY;
         if (this.y == that.y) return 0;
-        return (this.y - that.y)/((double)this.x - that.x);
+        return (this.y - that.y)/((double) this.x - that.x);
     }
 
     // is this point lexicographically smaller than that one?
     // comparing y-coordinates and breaking ties by x-coordinates
     public int compareTo(Point that) {
-        if (this.y > that.y ) return +1;
-        if (this.y < that.y ) return -1;
-        if (this.x > that.x ) return +1;
-        if (this.x < that.x ) return -1;
+        if (this.y > that.y) return +1;
+        if (this.y < that.y) return -1;
+        if (this.x > that.x) return +1;
+        if (this.x < that.x) return -1;
         return 0;
     }
 
@@ -54,7 +55,7 @@ public class Point implements Comparable<Point> {
     private class SlopeComparator implements Comparator<Point> {
 
         public int compare(Point o1, Point o2) {
-            return Double.compare(slopeTo(o1),slopeTo(o2));
+            return Double.compare(slopeTo(o1), slopeTo(o2));
         }
     }
 }
