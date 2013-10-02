@@ -32,7 +32,8 @@ public class Point implements Comparable<Point> {
         /*(y1 − y0)/(x1 − x0)*/
         if (this.x == that.x) 
             return this.y == that.y ? Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY;
-        if (this.y == that.y) return 0;
+        if (this.y == that.y) 
+            return 0;
         return (this.y - that.y)/((double) this.x - that.x);
     }
 
@@ -55,7 +56,7 @@ public class Point implements Comparable<Point> {
     private class SlopeComparator implements Comparator<Point> {
 
         public int compare(Point o1, Point o2) {
-            return Double.compare(slopeTo(o1), slopeTo(o2));
+            return Double.compare(slopeTo(o1),slopeTo(o2));
         }
     }
 }

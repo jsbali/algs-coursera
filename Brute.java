@@ -25,7 +25,7 @@ public class Brute {
                     double ij = pa[i].slopeTo(pa[j]);
                     double ik = pa[i].slopeTo(pa[k]);
 
-                    if(Double.compare(ij, ik) == 0) {
+                    if (Double.compare(ij, ik) == 0) {
 
                         for (int l = k+1; l < N; l++) {
                             double il = pa[i].slopeTo(pa[l]);
